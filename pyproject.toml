@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mlops-crispdm-ci-cd"
-version = "0.0.3"
+version = "0.0.4"
 description = "Proyecto demo MLOps siguiendo CRISP-DM"
 readme = "README.md"
 requires-python = ">=3.9"
