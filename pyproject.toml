@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mlops-crispdm-ci-cd"
-version = "0.0.7"
+version = "0.0.8"
 description = "Proyecto demo MLOps siguiendo CRISP-DM"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -27,3 +27,6 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"mlops_crispdm" = ["spam_dataset_es.csv"]
