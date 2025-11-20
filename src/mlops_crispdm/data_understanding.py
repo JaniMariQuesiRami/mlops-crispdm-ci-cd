@@ -1,9 +1,12 @@
 import pandas as pd
-
+from pathlib import Path
 # ======================================================
 # 2 Carga del dataset traducido
 # ======================================================
-df = pd.read_csv("mlops_crispdm/spam_dataset_es.csv")
+BASE_DIR = Path(__file__).resolve().parent
+CSV_PATH = BASE_DIR / "spam_dataset_es.csv"
+
+df = pd.read_csv(CSV_PATH)
 
 # # usamos solo la etiqueta y el texto traducido
 df = df[["Target", "Text_es"]].dropna().rename(columns={"Text_es": "Texto"})
