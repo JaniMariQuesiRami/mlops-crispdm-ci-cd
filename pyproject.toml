@@ -4,10 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mlops-crispdm-ci-cd"
-version = "0.0.6"
+version = "0.0.7"
 description = "Proyecto demo MLOps siguiendo CRISP-DM"
 readme = "README.md"
 requires-python = ">=3.9"
+dependencies = [
+    "nltk",
+    "pandas",
+    "matplotlib",
+    "scikit-learn",
+    "imbalanced-learn",
+    "torch",
+    "numpy",
+    "tqdm",
+]
 
 [project.scripts]
 mlops-crispdm-demo = "mlops_crispdm.cli:main"

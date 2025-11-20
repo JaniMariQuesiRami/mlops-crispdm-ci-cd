@@ -2,12 +2,13 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copiamos solo lo necesario para construir el paquete
-COPY pyproject.toml README.md ./
-COPY src ./src
+# Versión que vendrá del tag (build-arg)
+ARG PACKAGE_VERSION
+ENV PACKAGE_VERSION=${PACKAGE_VERSION}
 
-# Instalamos el paquete (como si viniera de PyPI, pero desde el código)
-RUN pip install --no-cache-dir .
+# Actualizar pip e instalar tu paquete desde PyPI
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir mlops-crispdm-ci-cd==${PACKAGE_VERSION}
 
-# Comando por defecto
+# Ejecutable definido en tu pyproject (entry point)
 ENTRYPOINT ["mlops-crispdm-demo"]
